@@ -5,16 +5,18 @@
  */
 package View;
 
+import controller.Controller_Tiket;
+
 /**
  *
  * @author irsya
  */
 public class viewAbout extends javax.swing.JFrame {
 
-    /**
-     * Creates new form viewAbout
-     */
+    Controller_Tiket control;
+    
     public viewAbout() {
+        this.control = new Controller_Tiket(this);
         initComponents();
     }
 
@@ -92,7 +94,7 @@ public class viewAbout extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        control.kembali();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked

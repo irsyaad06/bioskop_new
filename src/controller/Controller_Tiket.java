@@ -8,6 +8,7 @@ package controller;
 import DAO.DAOTiket;
 import DAOImplement.Implement_Tiket;
 import View.ViewView;
+import View.viewAbout;
 import javax.swing.JOptionPane;
 import java.util.List;
 import model.ModelTiket;
@@ -20,6 +21,7 @@ import model.TabelModelTiket;
 public class Controller_Tiket {
 
     ViewView tampilan;
+    viewAbout about;
     Implement_Tiket implement_tiket;
     List<ModelTiket> data_tiket;
 
@@ -28,7 +30,16 @@ public class Controller_Tiket {
         implement_tiket = new DAOTiket();
         data_tiket = implement_tiket.getALL();
     }
-
+    
+    public Controller_Tiket(viewAbout about){
+    this.about = about;
+    }
+    
+    //Tomol Kembali
+    public void kembali(){
+        about.dispose();
+    
+    }
     //Tombol Reset
     public void reset() {
         tampilan.getTxtIDKode().setText("");

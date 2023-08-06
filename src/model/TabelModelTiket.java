@@ -40,7 +40,7 @@ public class TabelModelTiket extends AbstractTableModel{
             case 2:
                 return "JUDUL";
             case 3:
-                return "JAM PENAYANGAN";
+                return "JAM TAYANG";
             case 4:
                 return "KURSI";
             default:
