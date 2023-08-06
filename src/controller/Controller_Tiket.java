@@ -33,8 +33,8 @@ public class Controller_Tiket {
     public void reset() {
         tampilan.getTxtIDKode().setText("");
         tampilan.getTxtNamaPelanggan().setText("");
-        tampilan.getTxtFilm().setText("");
-        tampilan.getTxtJam().setSelectedItem("--- Pilih Jam ---");
+        tampilan.getTxtFilm().setSelectedItem("--- Pilih Film ---");
+        tampilan.getTxtJamTayang().setSelectedItem("--- Pilih Jam ---");
         tampilan.getTxtKursi().setSelectedItem("--- Pilih Kursi ---");
         tampilan.getTxtCariData().setText("");
     }
@@ -50,34 +50,34 @@ public class Controller_Tiket {
     public void isiField(int row) {
         tampilan.getTxtIDKode().setText(data_tiket.get(row).getId().toString());
         tampilan.getTxtNamaPelanggan().setText(data_tiket.get(row).getNama());
-        tampilan.getTxtFilm().setText(data_tiket.get(row).getJudul());
-        tampilan.getTxtJam().setSelectedItem(data_tiket.get(row).getJam());
+        tampilan.getTxtFilm().setSelectedItem(data_tiket.get(row).getJudul());
+        tampilan.getTxtJamTayang().setSelectedItem(data_tiket.get(row).getJam());
         tampilan.getTxtKursi().setSelectedItem(data_tiket.get(row).getKursi());
     }
 
     //Insert Data Dari Form Ke Database
     public void insert() {
-        if (tampilan.getTxtNamaPelanggan().getText().trim().isEmpty() & tampilan.getTxtFilm().getText().trim().isEmpty()) {
+        if (tampilan.getTxtNamaPelanggan().getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Data Tidak Boleh Kosong");
 
         } else if (tampilan.getTxtNamaPelanggan().getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Nama Tidak Boleh Kosong");
 
-        } else if (tampilan.getTxtFilm().getText().trim().isEmpty()) {
+        } else if (tampilan.getTxtFilm().getSelectedItem() == null || tampilan.getTxtNamaPelanggan().toString().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Judul Film Tidak Boleh Kosong");
 
-        } else if (tampilan.getTxtJam().getSelectedItem().toString().trim().isEmpty()) {
+        } else if (tampilan.getTxtJamTayang().getSelectedItem() == null || tampilan.getTxtJamTayang().getSelectedItem().toString().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Jam Tayang Tidak Boleh Kosong");
 
-        } else if (tampilan.getTxtJam().getSelectedItem().toString().trim().isEmpty()) {
+        } else if (tampilan.getTxtKursi().getSelectedItem() == null || tampilan.getTxtKursi().getSelectedItem().toString().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Kursi Tidak Boleh Kosong");
 
         }else {
 
             ModelTiket data = new ModelTiket();
             data.setNama(tampilan.getTxtNamaPelanggan().getText());
-            data.setJudul(tampilan.getTxtFilm().getText());
-            data.setJam(tampilan.getTxtJam().getSelectedItem().toString());
+            data.setJudul(tampilan.getTxtFilm().getSelectedItem().toString());
+            data.setJam(tampilan.getTxtJamTayang().getSelectedItem().toString());
             data.setKursi(tampilan.getTxtKursi().getSelectedItem().toString());
             implement_tiket.insert(data);
             JOptionPane.showMessageDialog(null, "Data Berhasil Di Simpan");
@@ -90,8 +90,8 @@ public void update(){
         if(!tampilan.getTxtIDKode().getText().trim().isEmpty()){
             ModelTiket data = new ModelTiket();
             data.setNama(tampilan.getTxtNamaPelanggan().getText());
-            data.setJudul(tampilan.getTxtFilm().getText());
-            data.setJam(tampilan.getTxtJam().getSelectedItem().toString());
+            data.setJudul(tampilan.getTxtFilm().getSelectedItem().toString());
+            data.setJam(tampilan.getTxtJamTayang().getSelectedItem().toString());
             data.setKursi(tampilan.getTxtKursi().getSelectedItem().toString());
             data.setId(Integer.parseInt(tampilan.getTxtIDKode().getText()));
             

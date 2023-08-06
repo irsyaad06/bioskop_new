@@ -40,15 +40,12 @@ public class ViewView extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtIDKode = new javax.swing.JTextField();
         txtNamaPelanggan = new javax.swing.JTextField();
-        txtFilm = new javax.swing.JTextField();
-        txtJam = new javax.swing.JComboBox<>();
         btnSimpan = new javax.swing.JButton();
         btnUbah = new javax.swing.JButton();
         btnHapus = new javax.swing.JButton();
@@ -61,14 +58,14 @@ public class ViewView extends javax.swing.JFrame {
         TabelDataMember = new javax.swing.JTable();
         btnAbout = new javax.swing.JButton();
         txtKursi = new javax.swing.JComboBox<>();
+        txtJamTayang = new javax.swing.JComboBox<>();
+        txtFilm = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("APLIKASI MEMBER");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("APLIKASI PENDATAAN TIKET BIOSKOP");
-
-        jLabel2.setText("ID/KODE");
 
         jLabel3.setText("NAMA PELANGGAN");
 
@@ -79,13 +76,6 @@ public class ViewView extends javax.swing.JFrame {
         jLabel6.setText("Kursi");
 
         txtIDKode.setEditable(false);
-
-        txtJam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--- Pilih Jam---", "08.00", "12.00", "14.00", "16.00", "19.00", "21.00" }));
-        txtJam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtJamActionPerformed(evt);
-            }
-        });
 
         btnSimpan.setText("SIMPAN");
         btnSimpan.addActionListener(new java.awt.event.ActionListener() {
@@ -163,14 +153,14 @@ public class ViewView extends javax.swing.JFrame {
             }
         });
 
+        txtJamTayang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--- Pilih Jam ---", "08.00", "10.00", "12.00", "14.00", "16.00", "18.00", "21.00", "23.00" }));
+
+        txtFilm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--- Pilih Film ---", "UPIN IPIN", "JOHN WICK", "CARS", "TOY STORY", "NARUTO", "INSIIOUS", "THE COUNJURING" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(329, 329, 329)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -184,22 +174,28 @@ public class ViewView extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNamaPelanggan)
-                            .addComponent(txtFilm)
-                            .addComponent(txtIDKode, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtJam, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnAbout)
-                                    .addComponent(btnSimpan))
-                                .addGap(188, 188, 188)
-                                .addComponent(btnBatal))
-                            .addComponent(txtKursi, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(117, 117, 117)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNamaPelanggan)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(btnAbout)
+                                                    .addComponent(btnSimpan))
+                                                .addGap(188, 188, 188)
+                                                .addComponent(btnBatal))
+                                            .addComponent(txtKursi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(117, 117, 117))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtJamTayang, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
@@ -211,6 +207,13 @@ public class ViewView extends javax.swing.JFrame {
                                 .addComponent(btnRefresh))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(57, 57, 57))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(329, 329, 329)
+                        .addComponent(jLabel1))
+                    .addComponent(txtIDKode, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,11 +236,7 @@ public class ViewView extends javax.swing.JFrame {
                             .addComponent(btnUbah))
                         .addGap(63, 63, 63))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtIDKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGap(125, 125, 125)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -253,16 +252,19 @@ public class ViewView extends javax.swing.JFrame {
                                 .addGap(15, 15, 15)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel5)
-                                    .addComponent(txtJam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtJamTayang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(txtKursi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSimpan)
                             .addComponent(btnBatal))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(111, 111, 111)
                         .addComponent(btnAbout)
                         .addGap(41, 41, 41))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtIDKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -318,10 +320,6 @@ public class ViewView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtKursiActionPerformed
 
-    private void txtJamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJamActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtJamActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -368,7 +366,6 @@ public class ViewView extends javax.swing.JFrame {
     private javax.swing.JButton btnSimpan;
     private javax.swing.JButton btnUbah;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -376,9 +373,9 @@ public class ViewView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txtCariData;
-    private javax.swing.JTextField txtFilm;
+    private javax.swing.JComboBox<String> txtFilm;
     private javax.swing.JTextField txtIDKode;
-    private javax.swing.JComboBox<String> txtJam;
+    private javax.swing.JComboBox<String> txtJamTayang;
     private javax.swing.JComboBox<String> txtKursi;
     private javax.swing.JTextField txtNamaPelanggan;
     // End of variables declaration//GEN-END:variables
@@ -419,9 +416,6 @@ public class ViewView extends javax.swing.JFrame {
         return txtCariData;
     }
 
-    public JTextField getTxtFilm() {
-        return txtFilm;
-    }
 
     public JTextField getTxtIDKode() {
         return txtIDKode;
@@ -435,10 +429,14 @@ public class ViewView extends javax.swing.JFrame {
         return txtNamaPelanggan;
     }
 
-    public JComboBox<String> getTxtJam() {
-        return txtJam;
+    public JComboBox<String> getTxtJamTayang() {
+        return txtJamTayang;
     }
 
+    public JComboBox<String> getTxtFilm() {
+        return txtFilm;
+    }
+    
    
 
 }

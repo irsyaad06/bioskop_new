@@ -29,7 +29,7 @@ public class DAOTiket implements Implement_Tiket{
     final String update = "UPDATE film set nama=?, judul=?, jam=?, kursi=? where id=? ;";
     final String delete = "DELETE FROM film where id=? ;";
     final String select = "SELECT * FROM film ;";
-    final String carinama = "SELECT * FROM film where nama like ?";
+    final String carinama = "SELECT * FROM film where nama like ? ";
     
     public DAOTiket(){
         connection = koneksi.connection();
