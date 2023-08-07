@@ -35,13 +35,12 @@ public class viewAbout extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1050, 610));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setMinimumSize(new java.awt.Dimension(600, 750));
         jPanel1.setPreferredSize(new java.awt.Dimension(1050, 610));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/revamp.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/image/rebuild.png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(600, 750));
         jLabel1.setMinimumSize(new java.awt.Dimension(600, 750));
         jLabel1.setPreferredSize(new java.awt.Dimension(600, 750));
@@ -88,7 +87,7 @@ public class viewAbout extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
 
         pack();
