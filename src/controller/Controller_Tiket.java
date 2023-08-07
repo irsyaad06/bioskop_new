@@ -74,13 +74,13 @@ public class Controller_Tiket {
         } else if (tampilan.getTxtNamaPelanggan().getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Nama Tidak Boleh Kosong");
 
-        } else if (tampilan.getTxtFilm().getSelectedItem() == null || tampilan.getTxtNamaPelanggan().toString().trim().isEmpty()) {
+        } else if (tampilan.getTxtFilm().getSelectedItem() == "--- Pilih Film ---" || tampilan.getTxtNamaPelanggan().toString().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Judul Film Tidak Boleh Kosong");
 
-        } else if (tampilan.getTxtJamTayang().getSelectedItem() == null || tampilan.getTxtJamTayang().getSelectedItem().toString().trim().isEmpty()) {
+        } else if (tampilan.getTxtJamTayang().getSelectedItem() == "--- Pilih Jam ---"  || tampilan.getTxtJamTayang().getSelectedItem().toString().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Jam Tayang Tidak Boleh Kosong");
 
-        } else if (tampilan.getTxtKursi().getSelectedItem() == null || tampilan.getTxtKursi().getSelectedItem().toString().trim().isEmpty()) {
+        } else if (tampilan.getTxtKursi().getSelectedItem() == "--- Pilih Kursi ---"  || tampilan.getTxtKursi().getSelectedItem().toString().trim().isEmpty()) {
             JOptionPane.showMessageDialog(tampilan, "Kursi Tidak Boleh Kosong");
 
         }else {
